@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<title>AX 인사이트 뉴스레터 — 2026년 5월 16일</title>
+<style>
+  :root {
+    --color-bg: #fafaf8;
+    --color-surface: #ffffff;
+    --color-surface-alt: #f4f3ef;
+    --color-border: #e2e0da;
+    --color-border-light: #ebe9e3;
+    --color-text: #1a1916;
+    --color-text-secondary: #5a5750;
+    --color-text-muted: #8a8780;
+    --color-accent: #2d5be3;
+    --color-accent-light: #eef1fb;
+    --color-accent-mid: #c5cffa;
+    --color-gold: #b8860b;
+    --color-gold-light: #fdf8ec;
+    --color-green: #1a6b3c;
+    --color-green-light: #edf6f1;
+    --color-red: #c0392b;
+    --color-red-light: #fdf0ef;
+    --color-purple: #6b3fa0;
+    --color-purple-light: #f3eefa;
+    --font-sans: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+    --max-width: 820px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Layout ── */
+  .page-wrapper {
+    display: flex;
+    gap: 0;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .toc-sidebar {
+    position: sticky;
+    top: 32px;
+    align-self: flex-start;
+    width: 220px;
+    flex-shrink: 0;
+    padding: 28px 0 28px 0;
+    margin-right: 40px;
+    display: block;
+  }
+
+  .main-content {
+    flex: 1;
+    min-width: 0;
+    max-width: var(--max-width);
+    padding: 40px 0 80px;
+  }
+
+  /* ── TOC ── */
+  .toc-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 14px;
+    padding-left: 2px;
+  }
+
+  .toc-list {
+    list-style: none;
+    border-left: 2px solid var(--color-border);
+  }
+
+  .toc-list li a {
+    display: block;
+    padding: 5px 14px;
+    font-size: 12.5px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    line-height: 1.4;
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .toc-list li a:hover {
+    color: var(--color-accent);
+    border-left-color: var(--color-accent);
+  }
+
+  .toc-list li.toc-part a {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--color-text);
+  }
+
+  /* ── Meta bar ── */
+  .meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    text-transform: lowercase;
+  }
+
+  .meta-date {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-left: auto;
+  }
+
+  /* ── Header ── */
+  .doc-header {
+    margin-bottom: 36px;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .newsletter-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 14px;
+  }
+
+  .doc-title {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .audience-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    color: var(--color-text-secondary);
+  }
+
+  .audience-box strong { color: var(--color-text); }
+
+  /* ── Intro ── */
+  .intro-section {
+    margin-bottom: 36px;
+  }
+
+  .intro-text {
+    font-size: 15.5px;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .central-question {
+    background: linear-gradient(135deg, var(--color-accent-light) 0%, #e8edfd 100%);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 18px 22px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1.6;
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 52px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+
+  .part-badge {
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: var(--color-text);
+    color: var(--color-bg);
+    margin-top: 3px;
+  }
+
+  .section-title-wrap {}
+
+  .section-part-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  h2.section-title {
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  h3.subsection-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 28px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  h4.agent-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 20px 0 10px;
+  }
+
+  p {
+    font-size: 15.5px;
+    line-height: 1.82;
+    color: var(--color-text);
+    margin-bottom: 16px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* ── Blockquote / Callout ── */
+  .quote-karpathy {
+    margin: 24px 0;
+    padding: 18px 22px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-gold);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .quote-karpathy p {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .quote-attribution {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-top: 8px;
+    font-style: normal;
+  }
+
+  .callout-insight {
+    margin: 24px 0;
+    padding: 16px 20px;
+    background: var(--color-gold-light);
+    border: 1px solid #e8d48a;
+    border-radius: var(--radius-md);
+  }
+
+  .callout-insight .callout-icon {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 6px;
+  }
+
+  .callout-insight p {
+    font-size: 14.5px;
+    color: #5a4a10;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .callout-harness {
+    margin: 24px 0;
+    padding: 16px 20px;
+    background: var(--color-purple-light);
+    border: 1px solid #c9a8f0;
+    border-radius: var(--radius-md);
+  }
+
+  .callout-harness .callout-icon {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-purple);
+    margin-bottom: 6px;
+  }
+
+  .callout-harness p {
+    font-size: 14.5px;
+    color: #3d1e6b;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  /* ── Tables ── */
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: var(--color-surface);
+  }
+
+  thead tr {
+    background: var(--color-surface-alt);
+  }
+
+  thead th {
+    padding: 11px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+    text-align: left;
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background 0.1s;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--color-surface-alt); }
+
+  tbody td {
+    padding: 10px 16px;
+    color: var(--color-text);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  td strong { font-weight: 700; color: var(--color-text); }
+
+  .badge-yes {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-green);
+    background: var(--color-green-light);
+    padding: 2px 8px;
+    border-radius: 100px;
+  }
+
+  .badge-no {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-red);
+    background: var(--color-red-light);
+    padding: 2px 8px;
+    border-radius: 100px;
+  }
+
+  /* ── Stat cards ── */
+  .stat-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .stat-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .stat-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-desc {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .stat-source {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+  }
+
+  /* ── Agent cards ── */
+  .agent-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .agent-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .agent-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .agent-icon.blue { background: var(--color-accent-light); }
+  .agent-icon.purple { background: var(--color-purple-light); }
+
+  .agent-name {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--color-text);
+  }
+
+  .agent-name-en {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    margin-top: 1px;
+  }
+
+  .agent-sub-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+
+  .agent-desc-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    margin-bottom: 4px;
+  }
+
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .bullet-list li {
+    font-size: 14.5px;
+    color: var(--color-text);
+    line-height: 1.65;
+    padding: 3px 0 3px 20px;
+    position: relative;
+  }
+
+  .bullet-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--color-text-muted);
+  }
+
+  /* ── Harness steps ── */
+  .harness-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+
+  .harness-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .harness-card-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+  }
+
+  .harness-card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+
+  .harness-card-desc {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ── Summary section ── */
+  .summary-section {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .summary-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+  }
+
+  .summary-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .summary-item:last-child { border-bottom: none; }
+
+  .summary-number {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+
+  .summary-text { flex: 1; }
+
+  .summary-item-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+
+  .summary-item-desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ── Footer ── */
+  .doc-footer {
+    padding-top: 28px;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  /* ── Divider ── */
+  hr.section-divider {
+    border: none;
+    border-top: 1px solid var(--color-border-light);
+    margin: 36px 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .toc-sidebar { display: none; }
+    .page-wrapper { padding: 0 16px; }
+    .main-content { padding: 24px 0 60px; }
+    .summary-section { padding: 20px 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .stat-cards { grid-template-columns: 1fr 1fr; }
+    .harness-grid { grid-template-columns: 1fr; }
+    .agent-card { padding: 16px 18px; }
+    .doc-title { font-size: 22px; }
+    h2.section-title { font-size: 18px; }
+  }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="AX 인사이트 뉴스레터 — 2026년 5월 16일">
+<meta property="og:description" content="대상: 전체 구성원 여러분 이번 호 주제: CAIO 워크샵 핵심 메시지 — AI 시대, 우리가 잃어버려서는 안 되는 한 가지 안녕하세요, 여러분. 어제 중간리더 워크샵에서 CAIO분의 강연이 있었습니다. 구성원 모두가 들으면 좋을 내용이라 핵심을 정리해 공유합니다. 카파시의 한 마디, 온톨로지 기반 AX, 오픈클로와 에르">
+<meta property="og:url" content="https://pirius-jeong.github.io/ax-news/s/ty43i5/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AX 인사이트 뉴스레터 — 2026년 5월 16일">
+<meta name="twitter:description" content="대상: 전체 구성원 여러분 이번 호 주제: CAIO 워크샵 핵심 메시지 — AI 시대, 우리가 잃어버려서는 안 되는 한 가지 안녕하세요, 여러분. 어제 중간리더 워크샵에서 CAIO분의 강연이 있었습니다. 구성원 모두가 들으면 좋을 내용이라 핵심을 정리해 공유합니다. 카파시의 한 마디, 온톨로지 기반 AX, 오픈클로와 에르">
+<link rel="canonical" href="https://pirius-jeong.github.io/ax-news/s/ty43i5/">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- TOC Sidebar -->
+  <nav class="toc-sidebar" aria-label="목차">
+    <div class="toc-label">목차</div>
+    <ul class="toc-list">
+      <li><a href="#intro">도입</a></li>
+      <li class="toc-part"><a href="#part1">1부 — 카파시</a></li>
+      <li><a href="#part1-quote">핵심 문장</a></li>
+      <li><a href="#part1-table">Thinking vs Understanding</a></li>
+      <li class="toc-part"><a href="#part2">2부 — 온톨로지</a></li>
+      <li><a href="#part2-why">도입이 어려운 이유</a></li>
+      <li><a href="#part2-stats">도입 효과</a></li>
+      <li class="toc-part"><a href="#part3">3부 — 에이전트</a></li>
+      <li><a href="#part3-openclaw">오픈클로</a></li>
+      <li><a href="#part3-hermes">에르메스</a></li>
+      <li><a href="#part3-compare">비교</a></li>
+      <li class="toc-part"><a href="#part4">4부 — 하네스</a></li>
+      <li><a href="#part4-structure">구조</a></li>
+      <li><a href="#part4-self">자기 개선</a></li>
+      <li class="toc-part"><a href="#summary">정리</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Meta bar -->
+    <div class="meta-bar">
+      <span class="tag">newsletter</span>
+      <span class="tag">ax</span>
+      <span class="tag">ai-transformation</span>
+      <span class="tag">karpathy</span>
+      <span class="tag">ontology</span>
+      <span class="tag">harness-engineering</span>
+      <span class="tag">openclaw</span>
+      <span class="tag">hermes</span>
+      <span class="meta-date">2026-05-16</span>
+    </div>
+
+    <!-- Header -->
+    <header class="doc-header">
+      <div class="newsletter-label">AX 인사이트 뉴스레터</div>
+      <h1 class="doc-title">AI 시대, 우리가 잃어버려서는<br>안 되는 한 가지</h1>
+      <div class="audience-box">
+        <strong>대상</strong> 전체 구성원 여러분 &nbsp;·&nbsp; CAIO 워크샵 핵심 메시지 정리
+      </div>
+    </header>
+
+    <!-- Intro -->
+    <section class="intro-section" id="intro">
+      <p class="intro-text">안녕하세요, 여러분.</p>
+      <p class="intro-text">어제 중간리더 워크샵에서 CAIO분의 강연이 있었습니다. 구성원 모두가 들으면 좋을 내용이라 핵심을 정리해 공유합니다.</p>
+      <p class="intro-text">카파시의 한 마디, 온톨로지 기반 AX, 오픈클로와 에르메스 에이전트, 하네스 엔지니어링까지 — 키워드는 많았지만 결국 하나의 질문으로 수렴됩니다.</p>
+      <div class="central-question">
+        "AI가 점점 더 많은 일을 대신할 때, 우리는 무엇을 해야 하는가?"
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Part 1 -->
+    <section class="section" id="part1">
+      <div class="section-header">
+        <span class="part-badge">1부</span>
+        <div class="section-title-wrap">
+          <div class="section-part-label">카파시의 경고</div>
+          <h2 class="section-title">"생각은 위임해도,<br>이해는 위임하지 마라"</h2>
+        </div>
+      </div>
+
+      <h3 class="subsection-title" id="part1-quote">카파시가 남긴 단 하나의 문장</h3>
+
+      <p>OpenAI 공동창업자이자 Tesla 전 AI 책임자인 <strong>앤드레이 카파시</strong>는 최근 이런 말을 남겼습니다.</p>
+
+      <div class="quote-karpathy">
+        <p>"Thinking은 아웃소싱할 수 있다. 그러나 Understanding은 아웃소싱할 수 없다."</p>
+        <div class="quote-attribution">— Andrej Karpathy</div>
+      </div>
+
+      <p>얼핏 비슷해 보이지만 전혀 다른 개념입니다.</p>
+
+      <div class="table-wrapper" id="part1-table">
+        <table>
+          <thead>
+            <tr>
+              <th>개념</th>
+              <th>의미</th>
+              <th>AI 위임 여부</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Thinking (처리·분석)</strong></td>
+              <td>정보를 받아 단계적으로 결론에 도달하는 것</td>
+              <td><span class="badge-yes">✅ AI가 잘함</span></td>
+            </tr>
+            <tr>
+              <td><strong>Understanding (이해)</strong></td>
+              <td>정보가 내 머릿속에서 기존 지식과 연결되며 "아, 이거구나"로 바뀌는 것</td>
+              <td><span class="badge-no">❌ 내가 직접 해야 함</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>카파시는 이렇게 덧붙입니다.</p>
+
+      <div class="quote-karpathy">
+        <p>"나는 여전히 시스템의 일부다. 무엇을 만들지, 왜 할 가치가 있는지, 에이전트를 어떻게 지휘할지 — 이건 내가 병목이다."</p>
+        <div class="quote-attribution">— Andrej Karpathy</div>
+      </div>
+
+      <div class="callout-insight">
+        <div class="callout-icon">💡 우리 모두에게 의미하는 것</div>
+        <p>AI가 초안을 쓰고, 분석을 하고, 코드를 짜도 — "이게 맞는 방향인가, 이 결과가 신뢰할 수 있는가"를 판단하는 것은 여전히 우리의 몫입니다. AI를 많이 쓸수록 <strong>자기 분야에 대한 이해</strong>가 오히려 더 중요해집니다.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Part 2 -->
+    <section class="section" id="part2">
+      <div class="section-header">
+        <span class="part-badge">2부</span>
+        <div class="section-title-wrap">
+          <div class="section-part-label">온톨로지 기반 AX</div>
+          <h2 class="section-title">"AI에게 우리 회사 언어를 가르친다"</h2>
+        </div>
+      </div>
+
+      <h3 class="subsection-title" id="part2-why">AI 도입이 기대만큼 안 되는 이유</h3>
+
+      <p>많은 기업이 AI를 도입했지만 효과가 절반에 그치는 이유 중 하나, AI가 <strong>우리 회사의 맥락을 모르기 때문</strong>입니다.</p>
+      <p>"고객"이라는 단어 하나도 팀마다 다르게 씁니다. "제품", "완료", "승인"의 정의가 부서마다 다릅니다. AI는 그 차이를 알 수 없습니다.</p>
+      <p><strong>온톨로지(Ontology)</strong>는 이 문제를 풉니다. 우리 조직 안에서 쓰는 개념·용어·관계·규칙을 구조화해서 AI가 정확하게 이해하도록 만드는 것입니다. 쉽게 말하면 <strong>"우리 회사 사전"을 AI가 읽을 수 있는 형태로 만드는 것</strong>입니다.</p>
+
+      <h3 class="subsection-title" id="part2-stats">도입 효과 (실제 사례)</h3>
+
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-number">87.5%</div>
+          <div class="stat-desc">참여자의 생산성 향상 체감</div>
+          <div class="stat-source">A사</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">31.3%</div>
+          <div class="stat-desc">하루 1시간 이상 시간 절약 보고 직원 비율</div>
+          <div class="stat-source">A사</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">90%</div>
+          <div class="stat-desc">프로세스 검토 시간 단축</div>
+          <div class="stat-source">글로벌 제조사 Kärcher</div>
+        </div>
+      </div>
+
+      <div class="callout-insight">
+        <div class="callout-icon">핵심</div>
+        <p>"AI 도구를 깔았다"가 아니라, <strong>AI가 우리 업무 언어를 이해하도록 구조를 먼저 만들었다</strong>는 것입니다.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Part 3 -->
+    <section class="section" id="part3">
+      <div class="section-header">
+        <span class="part-badge">3부</span>
+        <div class="section-title-wrap">
+          <div class="section-part-label">오픈클로와 에르메스</div>
+          <h2 class="section-title">"AI를 도구가 아닌 팀원으로"</h2>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">에이전트란 무엇인가</h3>
+      <p>요즘 AI는 단순히 질문에 답하는 것을 넘어, <strong>스스로 계획하고 도구를 사용해 일을 끝까지 처리하는 에이전트</strong>로 진화하고 있습니다. 이 흐름에서 주목받는 두 프레임워크가 워크샵에서 소개됐습니다.</p>
+
+      <div class="agent-card" id="part3-openclaw">
+        <div class="agent-card-header">
+          <div class="agent-icon blue">🦅</div>
+          <div>
+            <div class="agent-name">오픈클로</div>
+            <div class="agent-name-en">OpenClaw — "AI를 팀원처럼 운영"</div>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>에이전트에게 <strong>성격·역할·비즈니스 규칙</strong>을 부여해 팀원처럼 운영</li>
+          <li>Slack 채널에서 실제 팀원과 동일하게 소통·협업</li>
+          <li>여러 에이전트가 동시에 각자 역할을 맡아 병렬로 작업</li>
+          <li>"AI에게 시키는" 구조가 아닌, "AI가 역할을 맡는" 구조</li>
+        </ul>
+      </div>
+
+      <div class="agent-card" id="part3-hermes">
+        <div class="agent-card-header">
+          <div class="agent-icon purple">🪄</div>
+          <div>
+            <div class="agent-name">에르메스</div>
+            <div class="agent-name-en">Hermes — "AI가 일하면서 스스로 성장"</div>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>문제를 해결하면 그 방법을 <strong>자동으로 스킬로 저장</strong></li>
+          <li>비슷한 상황이 오면 이전 경험을 활용해 더 잘 해결</li>
+          <li>24시간 운영되며 리서치·브리핑·반복 업무를 자동화</li>
+          <li>오래 쓸수록 품질이 높아지는 <strong>복리 효과</strong></li>
+        </ul>
+      </div>
+
+      <h3 class="subsection-title" id="part3-compare">두 에이전트 한눈에 비교</h3>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>오픈클로 (OpenClaw)</th>
+              <th>에르메스 (Hermes)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>핵심 철학</strong></td>
+              <td>팀원·협업 중심</td>
+              <td>자율 성장·학습 중심</td>
+            </tr>
+            <tr>
+              <td><strong>강점</strong></td>
+              <td>Slack 연동, 다채널 팀 운영</td>
+              <td>스킬 자동 축적, 장기 운영</td>
+            </tr>
+            <tr>
+              <td><strong>적합한 용도</strong></td>
+              <td>팀 워크플로우 자동화</td>
+              <td>반복 리서치·브리핑 자동화</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Part 4 -->
+    <section class="section" id="part4">
+      <div class="section-header">
+        <span class="part-badge">4부</span>
+        <div class="section-title-wrap">
+          <div class="section-part-label">하네스 엔지니어링</div>
+          <h2 class="section-title">"AI가 스스로 문제를 고치는 구조"</h2>
+        </div>
+      </div>
+
+      <h3 class="subsection-title" id="part4-structure">같은 AI, 다른 결과 — 차이는 '하네스'</h3>
+
+      <p>같은 AI 도구를 써도 누군가는 매번 긴 설명을 입력하고, 누군가는 한 마디면 원하는 결과가 나옵니다. 이 차이를 만드는 것이 <strong>하네스 엔지니어링</strong>입니다.</p>
+      <p>하네스란, <strong>AI가 작동하는 방식 자체를 설계하는 것</strong>입니다.</p>
+
+      <div class="harness-grid">
+        <div class="harness-card">
+          <div class="harness-card-label">지침</div>
+          <div class="harness-card-title">Rules</div>
+          <div class="harness-card-desc">AI가 미리 알아야 할 규칙·맥락을 사전에 정의</div>
+        </div>
+        <div class="harness-card">
+          <div class="harness-card-label">스킬</div>
+          <div class="harness-card-title">Skills</div>
+          <div class="harness-card-desc">반복되는 절차를 저장해 언제든 꺼내 쓰는 구조</div>
+        </div>
+        <div class="harness-card">
+          <div class="harness-card-label">훅</div>
+          <div class="harness-card-title">Hooks</div>
+          <div class="harness-card-desc">특정 상황이 발생하면 자동으로 실행되는 행동</div>
+        </div>
+      </div>
+
+      <h3 class="subsection-title" id="part4-self">핵심: 스스로 개선하는 AI</h3>
+
+      <p>하네스 엔지니어링의 가장 중요한 특징은 <strong>자기 개선</strong>입니다.</p>
+      <p>AI가 같은 실수를 반복하면 그것은 AI의 문제가 아니라 하네스 설계의 문제입니다. 실수가 발생하면 그 실수가 다시는 반복되지 않도록 지침·스킬·훅을 업데이트합니다. 시스템이 작동하면서 스스로 더 나아지는 구조입니다.</p>
+
+      <div class="callout-harness">
+        <div class="callout-icon">원칙</div>
+        <p>"같은 문제를 세 번 반복하면, 그건 AI의 문제가 아니라 하네스 설계의 문제다."</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Summary -->
+    <section id="summary">
+      <div class="summary-section">
+        <div class="summary-title">정리 — 오늘 가져갈 세 가지</div>
+
+        <div class="summary-item">
+          <div class="summary-number">1</div>
+          <div class="summary-text">
+            <div class="summary-item-title">이해는 내가 해야 한다 (카파시)</div>
+            <div class="summary-item-desc">AI가 분석하고 결론을 내더라도, "이게 맞는가"를 판단하는 것은 여전히 나의 몫입니다.</div>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <div class="summary-number">2</div>
+          <div class="summary-text">
+            <div class="summary-item-title">AI 도입의 성패는 '구조'가 결정한다 (온톨로지·하네스)</div>
+            <div class="summary-item-desc">도구보다 먼저, 우리 업무의 맥락과 규칙을 정의하는 것이 중요합니다.</div>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <div class="summary-number">3</div>
+          <div class="summary-text">
+            <div class="summary-item-title">잘 설계된 AI는 시간이 갈수록 더 좋아진다 (에이전트·하네스)</div>
+            <div class="summary-item-desc">처음 세팅이 잘 되면 쓸수록 품질이 높아집니다. 6월 플랫폼 출시가 그 시작점이 될 것입니다.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="doc-footer">
+      <p>궁금한 점이나 공유하고 싶은 경험이 있으시면 편하게 연락 주세요.</p>
+      <p>감사합니다.</p>
+    </footer>
+
+  </main>
+</div>
+
+</body>
+</html>
