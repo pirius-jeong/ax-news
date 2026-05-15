@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  
+  
+  <title>바이브코딩은 바닥을 높이고, 에이전틱 엔지니어링은 천장을 확장한다 — AX·AI 트렌드 리포트</title>
+  
+  
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f6f2;
+      --surface: #ffffff;
+      --text-primary: #1a1a2e;
+      --text-secondary: #5a6272;
+      --text-meta: #8a929e;
+      --accent: #1e40af;
+      --accent-light: #dbeafe;
+      --accent-mid: #3b82f6;
+      --highlight: #6d28d9;
+      --highlight-light: #ede9fe;
+      --warning-bg: #fef3c7;
+      --warning-border: #d97706;
+      --warning-text: #92400e;
+      --border: #e2e6ed;
+      --border-light: #eff1f5;
+      --code-bg: #1e293b;
+      --code-text: #e2e8f0;
+      --shadow-sm: 0 1px 6px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.04);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Article Header ── */
+    .article-header {
+      background: linear-gradient(140deg, #0a0f1e 0%, #0f1f4a 50%, #1a3a8a 100%);
+      color: #fff;
+      padding: 4.5rem 2rem 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 75% 25%, rgba(59,130,246,0.28) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(109,40,217,0.2) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .series-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 100px;
+      padding: 0.3rem 1.1rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: #93c5fd;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+
+    .article-title {
+      font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+      font-weight: 900;
+      line-height: 1.28;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      word-break: keep-all;
+      letter-spacing: -0.02em;
+    }
+
+    .article-subtitle {
+      font-size: 1.0rem;
+      color: #93c5fd;
+      max-width: 580px;
+      margin: 0 auto 2rem;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    .article-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1.5rem;
+    }
+
+    .meta-sep { opacity: 0.3; }
+
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 100px;
+      padding: 0.2rem 0.85rem;
+      font-size: 0.72rem;
+      color: #bfdbfe;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Abstract ── */
+    .abstract-wrap {
+      max-width: 800px;
+      margin: -2.5rem auto 0;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .abstract-box {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      box-shadow: var(--shadow-lg);
+      border-left: 5px solid var(--accent);
+    }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .abstract-text {
+      font-size: 0.97rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      word-break: keep-all;
+    }
+
+    /* ── Body ── */
+    .article-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+
+    /* ── Key Findings ── */
+    .findings-section { margin-bottom: 3rem; }
+
+    .findings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .finding-card {
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 1.6rem;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s;
+    }
+
+    .finding-card:hover { box-shadow: var(--shadow-md); }
+
+    .finding-num {
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.03em;
+    }
+
+    .finding-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      word-break: keep-all;
+    }
+
+    .finding-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    /* ── Divider ── */
+    .section-divider {
+      margin: 2.5rem 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+    }
+
+    /* ── Intro ── */
+    .intro-note {
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      line-height: 1.95;
+      margin-bottom: 0.5rem;
+      word-break: keep-all;
+    }
+
+    /* ── Part Header ── */
+    .part-header {
+      margin: 3.75rem 0 2rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .part-number {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.45rem;
+    }
+
+    .part-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      word-break: keep-all;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── h3 ── */
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 2.75rem 0 1rem;
+      word-break: keep-all;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    h3::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      min-height: 1.1em;
+      background: var(--accent-mid);
+      border-radius: 2px;
+      flex-shrink: 0;
+      margin-top: 0.15em;
+    }
+
+    p {
+      margin: 1rem 0;
+      font-size: 1rem;
+      color: var(--text-primary);
+      word-break: keep-all;
+    }
+
+    strong { font-weight: 700; }
+
+    /* ── Pull Quote ── */
+    .pull-quote {
+      position: relative;
+      margin: 2rem 0;
+      padding: 1.75rem 1.75rem 1.75rem 2.25rem;
+      background: var(--accent-light);
+      border-radius: 12px;
+      border-left: 4px solid var(--accent-mid);
+      overflow: hidden;
+    }
+
+    .pull-quote::before {
+      content: '\201C';
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 5rem;
+      line-height: 0;
+      color: var(--accent-mid);
+      opacity: 0.2;
+      position: absolute;
+      top: 2.5rem;
+      left: 1rem;
+      pointer-events: none;
+    }
+
+    .pull-quote-text {
+      font-size: 1.03rem;
+      font-style: italic;
+      color: #1e3a8a;
+      font-weight: 600;
+      line-height: 1.8;
+      word-break: keep-all;
+      position: relative;
+    }
+
+    .pull-quote-source {
+      font-size: 0.78rem;
+      color: var(--text-meta);
+      margin-top: 0.75rem;
+      font-style: normal;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .pull-quote.warning {
+      background: var(--warning-bg);
+      border-left-color: var(--warning-border);
+    }
+    .pull-quote.warning::before { color: var(--warning-border); }
+    .pull-quote.warning .pull-quote-text { color: var(--warning-text); }
+
+    .pull-quote.highlight {
+      background: var(--highlight-light);
+      border-left-color: var(--highlight);
+    }
+    .pull-quote.highlight::before { color: var(--highlight); }
+    .pull-quote.highlight .pull-quote-text { color: var(--highlight); }
+
+    /* ── Table ── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      font-size: 0.9rem;
+    }
+
+    thead tr { background: var(--accent); color: #fff; }
+
+    th {
+      padding: 0.9rem 1.25rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+
+    td {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-primary);
+      vertical-align: top;
+      word-break: keep-all;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:nth-child(even) { background: #f8faff; }
+    td strong { color: var(--accent); }
+
+    /* ── Diagram ── */
+    .diagram-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .diagram-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .diagram-tree {
+      font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 2.1;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .dn-user  { color: #6d28d9; font-weight: 800; }
+    .dn-ceo   { color: var(--accent); font-weight: 800; }
+    .dn-worker{ color: #065f46; font-weight: 600; }
+
+    /* ── Code ── */
+    pre {
+      background: var(--code-bg);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    }
+
+    pre code {
+      font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+      font-size: 0.88rem;
+      color: var(--code-text);
+      line-height: 1.8;
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      color: #e2e8f0;
+    }
+
+    p code {
+      background: #eff2ff;
+      color: var(--accent);
+      padding: 0.1em 0.45em;
+      border-radius: 5px;
+      font-size: 0.88em;
+      font-family: 'Menlo', 'Monaco', 'Consolas', monospace;
+    }
+
+    /* ── Numbered step list ── */
+    .steps-list {
+      list-style: none;
+      counter-reset: step-counter;
+      margin: 1.25rem 0;
+    }
+
+    .steps-list li {
+      counter-increment: step-counter;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--surface);
+      border-radius: 10px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      word-break: keep-all;
+    }
+
+    .steps-list li::before {
+      content: counter(step-counter);
+      min-width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    /* ── Implications / Takeaway ── */
+    .implications-section {
+      background: linear-gradient(140deg, #0a0f1e 0%, #0f1f4a 55%, #1a3a8a 100%);
+      border-radius: 18px;
+      padding: 2.75rem 2.5rem;
+      margin: 3.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .implications-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 80% 20%, rgba(59,130,246,0.25) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .implications-section .eyebrow { color: #93c5fd; position: relative; }
+
+    .implications-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #fff;
+      margin: 0.5rem 0 1.75rem;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      position: relative;
+    }
+
+    .takeaway-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding-bottom: 1.35rem;
+      margin-bottom: 1.35rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+    }
+
+    .takeaway-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .takeaway-num {
+      min-width: 34px;
+      height: 34px;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid rgba(147,197,253,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #93c5fd;
+      flex-shrink: 0;
+    }
+
+    .takeaway-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+      word-break: keep-all;
+    }
+
+    .takeaway-text strong { color: #fff; }
+
+    /* ── Sources ── */
+    .sources-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+    }
+
+    .sources-title {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-meta);
+      margin-bottom: 1rem;
+    }
+
+    .sources-list { list-style: none; }
+
+    .sources-list li {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      word-break: keep-all;
+    }
+
+    .sources-list li:last-child { border-bottom: none; }
+
+    .src-num {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.78rem;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    /* ── Outro ── */
+    .outro-note {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      word-break: keep-all;
+      margin-top: 1.5rem;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.78rem;
+      color: var(--text-meta);
+      border-top: 1px solid var(--border-light);
+      background: var(--bg);
+      line-height: 1.9;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .article-header { padding: 3.5rem 1.25rem 5rem; }
+      .abstract-box { padding: 1.5rem 1.25rem; }
+      .article-body { padding: 2.5rem 1rem 3.5rem; }
+      .findings-grid { grid-template-columns: 1fr; }
+      .implications-section { padding: 2rem 1.5rem; }
+      h3 { font-size: 1.03rem; }
+      .pull-quote { padding: 1.25rem 1.25rem 1.25rem 1.5rem; }
+      .pull-quote-text { font-size: 0.97rem; }
+      .diagram-tree { font-size: 0.8rem; }
+    }
+  </style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="AX·AI 트렌드 뉴스레터 — 2026년 5월 15일">
+<meta property="og:description" content="대상: AX 트랜스포메이션에 관심 있는 팀원 여러분 이번 호 주제: 바이브코딩의 진짜 의미 + AI 에이전트를 팀에서 쓰는 법 안녕하세요. 이번 주는 여러분이 뉴스에서 자주 듣는 &quot;바이브코딩&quot;이라는 단어와, 실제로 AI 에이전트를 업무에 붙이려 할 때 알아야 할 핵심 개념들을 정리했습니다. OpenAI·Tesla 전 AI">
+<meta property="og:url" content="https://pirius-jeong.github.io/ax-news/s/x1yhnv/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AX·AI 트렌드 뉴스레터 — 2026년 5월 15일">
+<meta name="twitter:description" content="대상: AX 트랜스포메이션에 관심 있는 팀원 여러분 이번 호 주제: 바이브코딩의 진짜 의미 + AI 에이전트를 팀에서 쓰는 법 안녕하세요. 이번 주는 여러분이 뉴스에서 자주 듣는 &quot;바이브코딩&quot;이라는 단어와, 실제로 AI 에이전트를 업무에 붙이려 할 때 알아야 할 핵심 개념들을 정리했습니다. OpenAI·Tesla 전 AI">
+<link rel="canonical" href="https://pirius-jeong.github.io/ax-news/s/x1yhnv/">
+</head>
+<body>
+
+<header class="article-header">
+  <div class="header-inner">
+    <div class="series-label">AX · AI 트렌드 리포트 &nbsp;·&nbsp; 2026년 5월</div>
+    <h1 class="article-title">
+      바이브코딩은 바닥을 높이고,<br>에이전틱 엔지니어링은 천장을 확장한다
+    </h1>
+    <p class="article-subtitle">
+      카파시의 Software 3.0론부터 멀티에이전트 수직 구조, Compound Engineering까지 —<br>AI를 업무에 제대로 붙이기 위한 핵심 개념 분석
+    </p>
+    <div class="article-meta-row">
+      <span>2026년 5월 15일</span>
+      <span class="meta-sep">|</span>
+      <span>AX 트랜스포메이션 뉴스레터</span>
+    </div>
+    <div class="tags-row">
+      <span class="tag">바이브코딩</span>
+      <span class="tag">Agentic AI</span>
+      <span class="tag">Software 3.0</span>
+      <span class="tag">Jagged Intelligence</span>
+      <span class="tag">Compound Engineering</span>
+      <span class="tag">AX 트렌드</span>
+    </div>
+  </div>
+</header>
+
+<div class="abstract-wrap">
+  <div class="abstract-box">
+    <div class="eyebrow">Abstract</div>
+    <p class="abstract-text">
+      이 리포트는 OpenAI·Tesla 전 AI 책임자 Andrej Karpathy의 최신 인터뷰(2026년 5월)를 중심으로,
+      AI 전환(AX)을 진행하는 팀이 반드시 이해해야 할 네 가지 핵심 개념을 정리합니다.
+      바이브코딩이 가져온 "바닥의 상승"과 에이전틱 엔지니어링이 열어주는 "천장의 확장",
+      LLM의 비선형적 능력 분포를 뜻하는 Jagged Intelligence,
+      그리고 AI 에이전트를 팀처럼 운영할 때 알아야 할 멀티에이전트 구조와 Compound Engineering을 다룹니다.
+    </p>
+  </div>
+</div>
+
+<main class="article-body">
+
+  <!-- Key Findings -->
+  <section class="findings-section">
+    <div class="eyebrow">Key Findings</div>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <div class="finding-num">01</div>
+        <div class="finding-title">바닥과 천장의 분리</div>
+        <div class="finding-desc">바이브코딩은 진입 장벽을 낮추고, 에이전틱 엔지니어링은 전문가 수준의 품질 기준을 유지하면서 속도를 극대화한다.</div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-num">02</div>
+        <div class="finding-title">들쭉날쭉한 지능</div>
+        <div class="finding-desc">LLM은 채점 가능한 영역(수학·코딩)에서 강하고 검증 어려운 일상 상식에서 약하다. 인간이 루프 안에 있어야 한다.</div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-num">03</div>
+        <div class="finding-title">이해는 위임 불가</div>
+        <div class="finding-desc">Thinking(생각)은 AI에게 맡길 수 있다. 하지만 Understanding(이해) — 왜 만드는지, 결과가 맞는지 — 는 반드시 인간의 몫이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <p class="intro-note">
+    이번 주는 뉴스에서 자주 듣는 <strong>"바이브코딩"</strong>의 진짜 의미와,
+    실제로 AI 에이전트를 업무에 붙이려 할 때 알아야 할 핵심 개념들을 정리했습니다.
+    OpenAI·Tesla 전 AI 책임자인 <strong>Andrej Karpathy</strong>의 인터뷰가 최근 AI 커뮤니티에서 큰 화제가 됐습니다.
+    그가 남긴 몇 가지 개념이 "AI를 어떻게 써야 하는가"에 대한 방향을 잡는 데 큰 도움이 됩니다.
+  </p>
+
+  <!-- ─────────── PART 1 ─────────── -->
+  <div class="part-header">
+    <div class="part-number">Part 1</div>
+    <h2 class="part-title">바이브코딩, 제대로 이해하기</h2>
+  </div>
+
+  <h3>소프트웨어는 지금 3.0으로 진화하고 있습니다</h3>
+
+  <p>카파시는 소프트웨어 개발의 역사를 세 단계로 설명합니다.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>단계</th>
+          <th>방식</th>
+          <th>예시</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Software 1.0</strong></td>
+          <td>사람이 코드를 직접 작성</td>
+          <td>if/else 로직, 전통 프로그램</td>
+        </tr>
+        <tr>
+          <td><strong>Software 2.0</strong></td>
+          <td>데이터로 신경망을 학습</td>
+          <td>이미지 인식, 추천 알고리즘</td>
+        </tr>
+        <tr>
+          <td><strong>Software 3.0</strong></td>
+          <td>프롬프트(말)가 코드</td>
+          <td>LLM에게 원하는 걸 설명 → 결과</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>3.0의 핵심은 이것입니다. 예전에는 OCR + 이미지 생성 API + 백엔드를 모두 연결해야 만들 수 있던 것이, 이제는 LLM에게 사진 한 장 주고 한 줄 요청으로 끝납니다. 코드가 사라진 자리에 "대화"가 들어오고 있습니다.</p>
+
+  <div class="pull-quote">
+    <p class="pull-quote-text">"이 앱, 신경망 한 번 호출로 그냥 되는 거 아닌가?"</p>
+    <p class="pull-quote-source">— Andrej Karpathy, 2026년 5월 인터뷰</p>
+  </div>
+
+  <h3>바이브코딩 = "바닥을 높이는 것"</h3>
+
+  <p>바이브코딩은 <strong>코딩을 몰라도 AI에게 말로 앱을 만드는 방식</strong>입니다. 카파시는 이것을 "바닥을 높이는 것"이라고 표현합니다. 누구나 빠르게 뭔가를 만들 수 있게 되었다는 뜻입니다.</p>
+
+  <p>하지만 여기서 중요한 경고가 있습니다.</p>
+
+  <div class="pull-quote warning">
+    <p class="pull-quote-text">"바이브로 빨리 만들었다고 해서 보안 구멍이 있어도 된다는 의미가 아니다. 그건 바이브코딩이 아니라 그냥 검증 없이 출시한 것이다."</p>
+    <p class="pull-quote-source">— Andrej Karpathy</p>
+  </div>
+
+  <h3>에이전틱 엔지니어링 = "천장을 확장하는 것"</h3>
+
+  <p>카파시가 진짜 주목하는 건 <strong>에이전틱 엔지니어링</strong>입니다. 바이브코딩이 진입 장벽을 낮추는 것이라면, 에이전틱 엔지니어링은 <strong>전문가 수준의 품질 기준은 그대로 유지하면서 속도를 극적으로 높이는 것</strong>입니다.</p>
+
+  <div class="pull-quote">
+    <p class="pull-quote-text">"AI를 정말 잘 다루는 사람은 10배가 아니라 1,000배 생산적일 수 있다."</p>
+    <p class="pull-quote-source">— Andrej Karpathy</p>
+  </div>
+
+  <p>실천 방법은 단순합니다. <strong>사람이 "무엇을 만들지, 왜 만드는지, 어떻게 검증할지"를 정하고, AI가 디테일을 채운다.</strong> 스펙을 설계하는 것은 여전히 인간의 몫입니다.</p>
+
+  <h3>AI가 잘하는 것과 못하는 것 — Jagged Intelligence</h3>
+
+  <p>LLM을 쓰다 보면 이런 경험을 하게 됩니다. 10만 줄 코드 베이스를 분석하고 보안 취약점을 찾아내는 AI가, "세차장이 50미터 앞인데 차로 가야 할까 걸어가야 할까"라는 질문에 "걸어가세요"라고 답합니다.</p>
+
+  <p>카파시는 이를 <strong>"들쭉날쭉한 지능(Jagged Intelligence)"</strong>이라고 부릅니다.</p>
+
+  <div class="pull-quote">
+    <p class="pull-quote-text">LLM은 <strong>채점이 가능한 영역</strong>에서만 강해집니다. 수학과 코딩은 정답이 있어서 강하고, 일상 상식은 검증하기 어려워서 약합니다.</p>
+  </div>
+
+  <p>이것이 의미하는 바:</p>
+
+  <ul class="steps-list">
+    <li>AI를 독립적 의사결정자로 두지 말고, <strong>도구</strong>로 다뤄야 합니다</li>
+    <li>어디서 잘하고 어디서 못하는지는 <strong>직접 경험</strong>해야 알 수 있습니다</li>
+    <li>들쭉날쭉함이 남아 있는 한 <strong>인간이 루프 안에 있어야</strong> 합니다</li>
+  </ul>
+
+  <h3>Thinking은 맡겨도 되지만, Understanding은 맡기면 안 됩니다</h3>
+
+  <p>카파시 인터뷰에서 수많은 사람들이 공통적으로 가장 인상 깊었다고 꼽은 한 마디입니다.</p>
+
+  <div class="pull-quote highlight">
+    <p class="pull-quote-text">Thinking(생각)은 아웃소싱할 수 있다. 그러나 Understanding(이해)은 아웃소싱할 수 없다.</p>
+    <p class="pull-quote-source">— Andrej Karpathy, 2026년 5월</p>
+  </div>
+
+  <p>코드 짜기, 분석, 단계별 추론 — 이건 AI에게 맡겨도 됩니다. 하지만 "왜 이걸 만드는지", "무엇이 중요한지", "이 결과가 맞는지"를 판단하는 것은 본인이 직접 이해하고 있어야 가능합니다.</p>
+
+  <p>AI에게 점점 더 많이 위임할수록, <strong>결과물은 나오지만 그 안을 내가 모르는 상태</strong>가 됩니다. 그것이 진짜 위험입니다.</p>
+
+  <!-- ─────────── PART 2 ─────────── -->
+  <div class="part-header">
+    <div class="part-number">Part 2</div>
+    <h2 class="part-title">AI 에이전트를 실무에 붙이면 생기는 일</h2>
+  </div>
+
+  <h3>"그럴듯한 완료" — AI 작업에서 가장 위험한 실패</h3>
+
+  <p>AI에게 일을 시키면 가장 무서운 건 에러가 아닙니다. 에러는 보입니다. 진짜 위험은 이것입니다.</p>
+
+  <div class="pull-quote warning">
+    <p class="pull-quote-text">겉으로는 완료된 것처럼 보이지만, 실제로는 중요한 부분이 빠진 상태.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>상황</th>
+          <th>"그럴듯한 완료"의 사례</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>광고 대본 작성</td>
+          <td>대본은 나왔는데 광고 필수 문구가 빠진 경우</td>
+        </tr>
+        <tr>
+          <td>자료 조사</td>
+          <td>수집을 했다고 했는데 블로그만 참조한 경우</td>
+        </tr>
+        <tr>
+          <td>발표 자료 제작</td>
+          <td>슬라이드는 만들었는데 대본과 메시지가 안 맞는 경우</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>대응 방법:</strong> 완료 조건을 구체적으로 정의해야 합니다. "다 했어?"가 아니라 "공식 문서 링크 포함됐어? 파일 위치 명시했어?"처럼 체크리스트로 검증해야 합니다.</p>
+
+  <h3>멀티에이전트 수직 구조 — AI 직원을 팀처럼 운영하기</h3>
+
+  <p>최근 "AI 직원 5명을 고용했다"는 사례들이 늘고 있습니다. 실제로 로컬 PC 한 대에서 여러 에이전트를 동시에 운영하는 방식이 실용화됐습니다.</p>
+
+  <p>가장 효율적인 구조는 <strong>수직 구조(CEO 에이전트 + 전문 워커 에이전트)</strong>입니다.</p>
+
+  <div class="diagram-box">
+    <div class="diagram-title">멀티에이전트 수직 구조도</div>
+    <div class="diagram-tree"><span class="dn-user">사용자</span>
+  │
+<span class="dn-ceo">CEO 에이전트</span> (작업 분배 · 종합)
+  ├── <span class="dn-worker">비서 에이전트</span>
+  ├── <span class="dn-worker">코딩 에이전트</span>
+  ├── <span class="dn-worker">리서치 에이전트</span>
+  └── <span class="dn-worker">마케팅 에이전트</span></div>
+  </div>
+
+  <p>수평 구조(에이전트들이 서로 통신)는 GPU/CPU 비용이 크게 올라가지만, 수직 구조는 한 번에 1~2개 에이전트만 활성화되어 <strong>단일 머신에서도 운영 가능</strong>합니다.</p>
+
+  <h3>Compound Engineering — AI가 실수에서 배우게 만들기</h3>
+
+  <p>AI 에이전트로 작업을 반복하다 보면 같은 실수를 반복하는 문제가 생깁니다. 이를 해결하는 방법이 <strong>Compound Engineering</strong>입니다. 원리는 간단합니다.</p>
+
+  <ol class="steps-list">
+    <li>리뷰 단계에서 AI가 틀린 이유를 <strong>파일로 기록</strong>합니다</li>
+    <li>다음 작업 시작 시 그 실수 목록을 <strong>AI에게 다시 주입</strong>합니다</li>
+    <li>같은 실수가 줄어들고, 사이클이 반복될수록 <strong>성능이 누적 향상</strong>됩니다</li>
+  </ol>
+
+  <p>처음에는 실수가 많지만, 반복할수록 리뷰 통과율이 올라갑니다. <strong>복리처럼 작동하는 AI 학습 루프</strong>입니다.</p>
+
+  <h3>2026년 AI의 승부처 — 복잡한 파이프라인이 아니라 단순한 반복</h3>
+
+  <p>최근 AI 전문가들 사이에서 공감대가 형성된 통찰을 공유합니다.</p>
+
+  <div class="pull-quote">
+    <p class="pull-quote-text">"AI로 가장 멀리 가는 방법은 복잡한 파이프라인이 아니라, 단순한 것을 멈추지 않고 반복하는 것."</p>
+  </div>
+
+  <p>모델을 더 크게 만드는 대신, <strong>추론 시점에 연산을 더 쓰는 방식</strong>으로 성능을 높이는 패턴이 2026년 AI의 핵심 트렌드입니다. 실용적인 형태 하나를 소개하면 이렇습니다.</p>
+
+<pre><code>while :; do cat 목표.md | AI에게_넣기; done</code></pre>
+
+  <p>AI에게 목표 파일을 주고 밤새 반복 실행시킵니다. 매 회차는 컨텍스트를 새로 열되, 이전 결과는 파일로 누적됩니다. 아침에 일어나면 수십 번의 실험이 쌓여 있습니다.</p>
+
+  <div class="pull-quote highlight">
+    <p class="pull-quote-text">"AI 시대에 당신이 잠든 8시간이 누군가에게는 100번의 개선이 일어나는 시간이 되고 있습니다."</p>
+  </div>
+
+  <!-- Implications -->
+  <div class="implications-section">
+    <div class="eyebrow">핵심 시사점</div>
+    <h2 class="implications-title">이번 호에서 가져갈 것 3가지</h2>
+
+    <div class="takeaway-item">
+      <div class="takeaway-num">1</div>
+      <div class="takeaway-text">
+        <strong>바이브코딩은 바닥을 높이고, 에이전틱 엔지니어링은 천장을 확장한다.</strong><br>
+        속도는 부가 가치이고 품질은 본질입니다. 빠르게 만드는 것과 제대로 만드는 것은 별개입니다.
+      </div>
+    </div>
+
+    <div class="takeaway-item">
+      <div class="takeaway-num">2</div>
+      <div class="takeaway-text">
+        <strong>AI는 들쭉날쭉하다.</strong><br>
+        어디서 잘하고 못하는지 직접 경험하고, 인간이 루프 안에 있어야 합니다. 독립적 의사결정자로 두지 마세요.
+      </div>
+    </div>
+
+    <div class="takeaway-item">
+      <div class="takeaway-num">3</div>
+      <div class="takeaway-text">
+        <strong>Thinking은 맡겨도 되지만, Understanding은 본인 것.</strong><br>
+        AI가 결과를 내더라도, 왜 그렇게 됐는지는 내가 알아야 합니다. 이해를 위임하면 판단력을 잃습니다.
+      </div>
+    </div>
+  </div>
+
+  <p class="outro-note">
+    다음 호에서는 실제 AI 코딩 도구(Codex, Claude Code)의 신기능과, 이를 업무에서 어떻게 활용할 수 있는지 살펴보겠습니다. 감사합니다.
+  </p>
+
+  <!-- Sources -->
+  <div class="sources-section">
+    <div class="sources-title">출처 및 참고자료</div>
+    <ul class="sources-list">
+      <li>
+        <span class="src-num">[1]</span>
+        <span>Andrej Karpathy 인터뷰 — Software 3.0, 바이브코딩, Jagged Intelligence, 에이전틱 엔지니어링 개념 (2026년 5월)</span>
+      </li>
+      <li>
+        <span class="src-num">[2]</span>
+        <span>LinkedIn — Jeongmin Lee, AX 트렌드 분석 포스트 (2026년 5월 11일)</span>
+      </li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>AX · AI 트렌드 뉴스레터 &nbsp;·&nbsp; 2026년 5월 15일 발행</p>
+  <p>이 문서는 AX 트랜스포메이션에 관심 있는 팀원을 위한 내부 리서치 리포트입니다.</p>
+</footer>
+
+</body>
+</html>
